@@ -126,6 +126,7 @@
     <Content Include="Views\scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\scripts\bootstrap.js" />
     <Content Include="Views\scripts\bootstrap.min.js" />
+    <Content Include="Views\Productos\Index.cshtml" />
     <None Include="Views\scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Views\scripts\jquery-1.10.2.js" />
     <Content Include="Views\scripts\jquery-1.10.2.min.js" />
@@ -135,6 +136,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
