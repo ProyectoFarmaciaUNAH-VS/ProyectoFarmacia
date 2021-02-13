@@ -127,6 +127,7 @@
     <Content Include="Views\scripts\bootstrap.js" />
     <Content Include="Views\scripts\bootstrap.min.js" />
     <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
     <None Include="Views\scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Views\scripts\jquery-1.10.2.js" />
     <Content Include="Views\scripts\jquery-1.10.2.min.js" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductosBL.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,6 +167,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProyectoFarmacia.BL\ProyectoFarmacia.BL.csproj">
+      <Project>{504c72d5-c05c-4d00-84c5-15691cb8b1ad}</Project>
+      <Name>ProyectoFarmacia.BL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

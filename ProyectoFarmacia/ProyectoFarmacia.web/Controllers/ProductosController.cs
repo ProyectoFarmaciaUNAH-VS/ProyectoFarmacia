@@ -1,13 +1,21 @@
-﻿using System.Web.Mvc;
+﻿using ProyectoFarmacia.BL;
+using System.Web.Mvc;
 
-namespace ProyectoFarmacia.web.Controllers
+namespace ProyectoFarmacia.Controllers
 {
-    public class ProductosController : Controller
+    public class ProductoController : Controller
     {
-        // GET: Productos
+
+
+        // GET: Producto
         public ActionResult Index()
         {
-            return View();
+
+            var productosBl = new ProductosBL();
+            var listadeProductos = productosBl.ObtenerProductos();
+
+
+            return View(listadeProductos);
         }
     }
 }
