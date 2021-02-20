@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProyectoFarmacia.BL
@@ -47,9 +48,11 @@ namespace ProyectoFarmacia.BL
         }
           public void EliminarProducto(int id)
         {
-            
+            var producto = _contexto.Productos.Find(id);
+            _contexto.Productos.Remove(producto);
+            _contexto.SaveChanges();
 
-        }   
+        }
     }
  }
  

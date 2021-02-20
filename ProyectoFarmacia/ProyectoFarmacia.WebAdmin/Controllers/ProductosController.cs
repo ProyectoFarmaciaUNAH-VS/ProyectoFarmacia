@@ -66,7 +66,7 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Eliminar(Producto producto)
         {
-            _productosBL.EliminarProducto(producto.id)
+            _productosBL.EliminarProducto(producto.ID);
             return RedirectToAction("Index");
         }
     }

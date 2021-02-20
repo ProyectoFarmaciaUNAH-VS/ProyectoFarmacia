@@ -8,7 +8,7 @@ namespace ProyectoFarmacia.BL
 {
     public class Producto
     {
-        internal int Id;
+       
 
         public int ID { get; set; }
         public string Descripcion { get; set; }
