@@ -45,6 +45,9 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
         public ActionResult Editar(int id)
         {
             var producto = _productosBL.ObtenerProducto(id);
+            var categorias = _categoriasBL.ObtenerCategorias();
+            ViewBag.CategoriaId =
+                new SelectList(categorias, "Id", "Descripcion", producto.CategoriaId);
             return View(producto);
 
         }
