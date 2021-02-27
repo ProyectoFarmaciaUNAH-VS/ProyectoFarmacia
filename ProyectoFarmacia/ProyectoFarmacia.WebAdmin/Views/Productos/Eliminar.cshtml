@@ -27,6 +27,46 @@
             @Html.DisplayFor(model => model.Precio)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaVencimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaVencimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.existencias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.existencias)
+        </dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.urlImagen)
+		</dt>
+
+		<dd>
+			<img src="@Model.urlImagen" alt="@Model.Descripcion" style="width:64px; height:auto" />
+		</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {
