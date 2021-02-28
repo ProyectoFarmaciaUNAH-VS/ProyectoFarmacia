@@ -58,16 +58,16 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
 					ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 					return View(producto);
 				}
-				if (producto.Precio < 0 && producto.Precio > 1000)
+				if (producto.Precio == 0)
 				{
-					ModelState.AddModelError("Precio", "Ingrese un precio mayor a 0 y menor a 1,000");
+					ModelState.AddModelError("Precio", "Ingrese el precio");
 
 					ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 					return View(producto);
 				}
-				if(producto.Descripcion != producto.Descripcion.Trim())
+				if (producto.Precio < 0)
 				{
-					ModelState.AddModelError("Descripción", "La descripción no debe contener espacios");
+					ModelState.AddModelError("Precio", "Ingrese un precio mayor a 0");
 
 					ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 					return View(producto);
@@ -105,7 +105,6 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
 			var categorias = _categoriasBL.ObtenerCategorias();
 			if (ModelState.IsValid)
 			{
-
 				if (producto.CategoriaId == 0)
 				{
 					ModelState.AddModelError("Categoria", "Selccione una categoría");
@@ -121,23 +120,16 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
 					ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 					return View(producto);
 				}
-				if (producto.Precio < 0 && producto.Precio > 1000)
+				if (producto.Precio == 0)
 				{
-					ModelState.AddModelError("Precio", "Ingrese un precio mayor a 0 y menor a 1,000");
+					ModelState.AddModelError("Precio", "Ingrese el precio");
 
 					ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 					return View(producto);
 				}
-				if (producto.Descripcion != producto.Descripcion.Trim())
+				if (producto.Precio < 0)
 				{
-					ModelState.AddModelError("Descripción", "La descripción no debe contener espacios");
-
-					ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
-					return View(producto);
-				}
-				if (producto.existencias < 0 && producto.existencias > 1000)
-				{
-					ModelState.AddModelError("Existencias", "Ingrese existencias mayor a 0 y menores a 1,000");
+					ModelState.AddModelError("Precio", "Ingrese un precio mayor a 0");
 
 					ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 					return View(producto);
