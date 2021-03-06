@@ -21,8 +21,17 @@
             @Html.DisplayNameFor(model => model.Precio)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Activo)
+            @Html.DisplayNameFor(model => model.existencias)
         </th>
+		<th>
+			@Html.DisplayNameFor(model => model.fechaVencimiento)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.urlImagen)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Activo)
+		</th>
         <th></th>
     </tr>
 
@@ -38,8 +47,17 @@
             @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Activo)
+            @Html.DisplayFor(modelItem => item.existencias)
         </td>
+		<td>
+			@Html.DisplayFor(modelItem => item.fechaVencimiento)
+		</td>
+		<td>
+			<img src="@item.urlImagen" alt="@item.Descripcion" style="width:64px; height:auto"/>
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Activo)
+		</td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.ID }) |
             @Html.ActionLink("Detalle", "Detalle", new { id=item.ID }) |
