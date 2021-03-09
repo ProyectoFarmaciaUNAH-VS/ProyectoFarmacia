@@ -44,7 +44,7 @@ namespace ProyectoFarmacia.BL
                 productoExistente.Precio = producto.Precio;
 				productoExistente.existencias = producto.existencias;
 				//productoExistente.fechaVencimiento = producto.fechaVencimiento;
-				productoExistente.urlImagen = producto.urlImagen;
+				productoExistente.UrlImagen = producto.UrlImagen;
 			}
             _contexto.SaveChanges();
         }

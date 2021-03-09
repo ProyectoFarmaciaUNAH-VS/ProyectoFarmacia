@@ -55,7 +55,7 @@ namespace ProyectoFarmacia.webAdmin.Controllers
             {
                 _clientesBL.GuardarCliente(cliente);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");   
             }
 
             return View(cliente);

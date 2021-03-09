@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoFarmacia.BL
 {
@@ -21,6 +18,7 @@ namespace ProyectoFarmacia.BL
         {
             Activo = true;
             Fecha = DateTime.Now;
+            ListadeOrdenDetalle = new List<OrdenDetalle>();
         }
 
     }
@@ -32,7 +30,7 @@ namespace ProyectoFarmacia.BL
         public Orden Orden { get; set; }
 
         public int ProductoId { get; set; }
-        public int Producto { get; set; }
+        public Producto Producto { get; set; }
 
         public int Cantidad { get; set; }
         public double Precio { get; set; }
