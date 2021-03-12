@@ -49,7 +49,7 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
 				}
 				if (Imagen != null)
 				{
-					producto.urlImagen = GuardarImagen(Imagen);
+					producto.UrlImagen = GuardarImagen(Imagen);
 				}
 				if (producto.Descripcion != producto.Descripcion.Trim())
 				{
@@ -111,7 +111,7 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
 				}
 				if (Imagen != null)
 				{
-					producto.urlImagen = GuardarImagen(Imagen);
+					producto.UrlImagen = GuardarImagen(Imagen);
 				}
 				if (producto.Descripcion != producto.Descripcion.Trim())
 				{
