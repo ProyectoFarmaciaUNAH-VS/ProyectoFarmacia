@@ -70,4 +70,4 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
             return RedirectToAction("Index", new { id = ordenDetalle.OrdenId });
         }
     }
-}
+} 
