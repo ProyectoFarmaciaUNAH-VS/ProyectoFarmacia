@@ -12,7 +12,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.OrdenId)
+            Orden No:
         </dt>
 
         <dd>
@@ -20,11 +20,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ProductoId)
+            @Html.DisplayNameFor(model => model.Producto)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ProductoId)
+            @Html.DisplayFor(model => model.Producto.Descripcion)
         </dd>
 
         <dt>
@@ -53,12 +53,15 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.OrdenId)
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Regresar a la lista", "Index", new { id = Model.OrdenId })
         </div>
     }
 </div>
