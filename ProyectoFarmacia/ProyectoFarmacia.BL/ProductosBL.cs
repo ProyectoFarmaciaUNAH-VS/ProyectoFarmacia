@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Linq;
 
 namespace ProyectoFarmacia.BL
@@ -21,11 +22,22 @@ namespace ProyectoFarmacia.BL
 			//Incluyo tabla Categoria en la vista Productos paa mostrar informacion vinculada entre tablas.
             ListadeProductos = _contexto.Productos
             .Include("Categoria")
+            .OrderBy(r => r.Categoria.Descripcion)
+            .ThenBy(r => r.Descripcion)
             .ToList();
             return ListadeProductos;
         }
-
-		//Metodo gradar y editar
+        public List<Producto> ObtenerProductosActivos()
+        {
+            //Incluyo tabla Categoria en la vista Productos paa mostrar informacion vinculada entre tablas.
+            ListadeProductos = _contexto.Productos
+            .Include("Categoria")
+            .Where(r => r.Activo == true)
+            .OrderBy(r => r.Descripcion)
+            .ToList();
+            return ListadeProductos;
+        }
+        //Metodo gradar y editar
         public void GuardarProducto(Producto producto)
      
         {
