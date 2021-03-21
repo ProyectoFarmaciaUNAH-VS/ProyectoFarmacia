@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="~/assets/css/custom.css">
     <title>@ViewBag.Title - Proyecto Farmacia!</title>
 </head>
-
 <body class="cm-no-transition cm-1-navbar">
     <div id="cm-menu">
         <nav class="cm-navbar cm-navbar-primary">
@@ -26,19 +25,19 @@
                 <div id="cm-menu-scroller">
                     <ul class="cm-menu-items">
                         <li class="active">
-                        <a href="/" class="sf-house">Inicio</a>
+                        <a href="/" class="sf-shop">Inicio</a>
                         </li>
                         <li>
-                        <a href="/Productos" class="sf-house">Productos</a>
+                        <a href="/Productos" class="sf-bag">Productos</a>
                         </li>
                         <li>
-                            @Html.ActionLink("Categorias", "Index", "Categorias", null, new { @class = "sf-house" })
+                            @Html.ActionLink("Categorias", "Index", "Categorias", null, new { @class = "sf-folder-house" })
                         </li>                 
                         <li>
-                        <a href="/Clientes" class="sf-house">Clientes</a>
+                        <a href="/Clientes" class="sf-user-male">Clientes</a>
                         </li>
                         <li>
-                        <a href="/Ordenes" class="sf-house">Ordenes</a>
+                        <a href="/Ordenes" class="sf-box-in">Ordenes</a>
                         </li>
                     </ul>
                 </div>
@@ -74,7 +73,7 @@
         </div>
         <footer class="cm-footer">
             <span class="pull-left">
-                <p>&copy; @DateTime.Now.Year - ProyectoFarmacia Application</p>
+                <p>&copy; @DateTime.Now.Year - Proyecto Farmacia Application</p>
             </span>
         </footer>
     </div>
@@ -86,5 +85,4 @@
     <script src="~/assets/js/clearmin.min.js"></script>
     <script src="~/assets/js/demo/home.js"></script>
 </body>
-
 </html>
