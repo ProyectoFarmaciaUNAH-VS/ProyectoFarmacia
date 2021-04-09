@@ -3,8 +3,10 @@ using System.Web.Mvc;
 
 namespace ProyectoFarmacia.WebAdmin.Controllers
 {
+    [Authorize]
     public class OrdenesController : Controller
     {
+        
         OrdenesBL _ordenesBL;
         ClientesBL _clientesBL;
 
