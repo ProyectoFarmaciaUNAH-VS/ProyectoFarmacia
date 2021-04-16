@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -7,18 +8,25 @@ namespace ProyectoFarmacia.BL
 {
     public class SeguridadBL
     {
+
         Contexto _contexto;
+        
+
         public SeguridadBL()
         {
+
             _contexto = new Contexto();
+           
         }
+
+      
 
         public bool Autorizar(string nombreUsuario, string contrasena)
         {
             var contrasenaEncriptada = Encriptar.CodificarContrasena(contrasena);
             var usuario = _contexto.Usuarios
-               .FirstOrDefault(r => r.Nombre == nombreUsuario &&
-               r.Contrasena == contrasenaEncriptada);
+                .FirstOrDefault(r => r.Nombre == nombreUsuario &&
+                r.Contrasena == contrasenaEncriptada);
 
             if (usuario != null)
             {

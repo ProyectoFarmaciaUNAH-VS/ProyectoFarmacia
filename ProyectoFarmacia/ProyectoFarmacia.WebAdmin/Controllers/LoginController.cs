@@ -6,7 +6,6 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
 {
     public class LoginController : Controller
     {
-
         SeguridadBL _seguridadBL;
 
         public LoginController()
@@ -14,23 +13,23 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
             _seguridadBL = new SeguridadBL();
         }
 
-
-        //LOGIN
+        // Login
         public ActionResult Index()
         {
+            
             FormsAuthentication.SignOut();
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(FormCollection data)
-        {
-            //CAPTURA DATOS DE LOGIN DE USUARIO
+        {   
+            //Captura de datos de login
             var nombreUsuario = data["username"];
             var contrasena = data["password"];
 
             var usuarioValido = _seguridadBL
-                    .Autorizar(nombreUsuario, contrasena);
+                .Autorizar(nombreUsuario, contrasena);
 
             if (usuarioValido)
             {
