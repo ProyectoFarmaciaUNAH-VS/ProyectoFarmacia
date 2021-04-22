@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace ProyectoFarmacia.WebAdmin.Controllers
 {
+    [Authorize]
     public class OrdenDetalleController : Controller
     {
         OrdenesBL _ordenBL;
@@ -74,4 +75,4 @@ namespace ProyectoFarmacia.WebAdmin.Controllers
             return RedirectToAction("Index", new { id = ordenDetalle.OrdenId });
         }
     }
-}
+} 
