@@ -5,6 +5,7 @@ namespace ProyectoFarmacia.BL
 {
     public class OrdenesBL
     {
+		int _restar = 0;
         Contexto _contexto;
         public List<Orden> ListadeOrdenes { get; set; }
 
@@ -63,7 +64,7 @@ namespace ProyectoFarmacia.BL
 
             _contexto.SaveChanges();
         }
-
+	
         public void GuardarOrdenDetalle(OrdenDetalle ordenDetalle)
         {
             var producto = _contexto.Productos.Find(ordenDetalle.ProductoId);
@@ -74,21 +75,44 @@ namespace ProyectoFarmacia.BL
             _contexto.OrdenDetalle.Add(ordenDetalle);
 
             var orden = _contexto.Ordenes.Find(ordenDetalle.OrdenId);
-            orden.Total = orden.Total + ordenDetalle.Total;
+			_restar = ordenDetalle.Cantidad;
 
-            _contexto.SaveChanges();
+			orden.Total = orden.Total + ordenDetalle.Total;
+
+			RestarInv(orden);
+
+			_contexto.SaveChanges();
         }
+		/// Calcular inventario
+		private void RestarInv(Orden orden)
+		{
+			var ordenDetalle = new OrdenDetalle();
+			var producto = _contexto.Productos.Find(ordenDetalle.ProductoId);
+			foreach (var detalle in orden.ListadeOrdenDetalle)
+			{
+				var Product = _contexto.Productos.Find(detalle.ProductoId);
+				if (Product != null)
+				{
+					if (Product.Activo == true)
+					{
+						if (Product.existencias > ordenDetalle.Cantidad)
+						{
+							Product.existencias = Product.existencias - _restar;
+						}
+					}
+				}
+			}
+		 }
 
-        public void EliminarOrdenDetalle(int id)
+		public void EliminarOrdenDetalle(int id)
         {
             var ordenDetalle = _contexto.OrdenDetalle.Find(id);
             _contexto.OrdenDetalle.Remove(ordenDetalle);
 
             var orden = _contexto.Ordenes.Find(ordenDetalle.OrdenId);
             orden.Total = orden.Total - ordenDetalle.Total;
-
-            _contexto.SaveChanges();
+			_contexto.SaveChanges();
         }
 
-    }
+	}
 }
