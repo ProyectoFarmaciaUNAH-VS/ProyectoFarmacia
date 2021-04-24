@@ -4,11 +4,10 @@
     ViewBag.Title = "Detalle";
 }
 
-<h2>Detalle</h2>
-
+<h2>Ordenes</h2>
+<hr />
+<h4>Detalles del registro</h4>
 <div>
-    <h4>Orden</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Cliente)
@@ -45,6 +44,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Regresar a la lista", "Index")
+	@Html.ActionLink("Editar", "Editar", new { id = Model.Id }, new { @class = "btn btn-warning btn-sm", @type = "button" })
+	@Html.ActionLink("Ir a la lista", "Index", null, new { @class = "btn btn-default btn-sm", @type = "button" })
 </p>

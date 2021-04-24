@@ -1,33 +1,37 @@
 ﻿@model IEnumerable<ProyectoFarmacia.BL.Categoria>
 
 @{
-    ViewBag.Title = "Categoria";
+    ViewBag.Title = "Categorías";
 }
 
-<h2>Categoria</h2>
+<h2>Categorías</h2>
 
 <p>
-    @Html.ActionLink("Crear nuevo", "Crear")
+    @Html.ActionLink("Nueva Categoría", "Crear", null, new { @class = "btn btn-primary btn-sm", @type = "button" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th></th>
-    </tr>
+<table id="myTable" class="table table-striped" style="width:100%" >
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Descripcion)
+			</th>
+			<th>Acciones</th>
+		</tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
-            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Descripcion)
+				</td>
+				<td>
+					@Html.ActionLink(" Editar", "Editar", new { id = item.Id }, new { @class = "btn btn-primary btn-sm glyphicon glyphicon-edit", @type = "button" })
+					@Html.ActionLink(" Detalle", "Detalle", new { id = item.Id }, new { @class = "btn btn-warning btn-sm glyphicon glyphicon-list-alt", @type = "button" })
+					@Html.ActionLink(" Eliminar", "Eliminar", new { id = item.Id }, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-trash", @type = "button" })
+				</td>
+			</tr>
+			}
+	</tbody>
 </table>

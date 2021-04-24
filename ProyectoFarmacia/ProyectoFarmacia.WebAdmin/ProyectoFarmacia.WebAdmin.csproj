@@ -1957,13 +1957,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Productos\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProyectoFarmacia.BL\ProyectoFarmacia.BL.csproj">
       <Project>{504c72d5-c05c-4d00-84c5-15691cb8b1ad}</Project>
       <Name>ProyectoFarmacia.BL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -29,7 +29,7 @@
 </table>
 
 <p>
-    @Html.ActionLink("Nuevo Producto", "Crear", new { id = Model.Id })
+    @Html.ActionLink("Agregar Producto", "Crear", new { id = Model.Id }, new { @class = "btn btn-primary btn-sm", @type = "button" })
 </p>
 <table class="table">
     <tr>
@@ -69,13 +69,13 @@
                 @Html.DisplayFor(modelItem => item.Total)
             </td>
             <td>
-                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }, new { @class = "btn btn-danger btn-sm", @type = "button" })
             </td>
         </tr>
     }
 
 </table>
 
-@Html.ActionLink("Regresar a ordenes", "Index", "Ordenes")
+@Html.ActionLink("Regresar a ordenes", "Index", "Ordenes", null, new { @class = "btn btn-default btn-sm", @type = "button" })
 
 

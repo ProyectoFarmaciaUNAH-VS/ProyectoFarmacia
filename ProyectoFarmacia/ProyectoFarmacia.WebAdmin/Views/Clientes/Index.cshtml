@@ -6,46 +6,43 @@
 <h2>Clientes</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Cliente", "Crear")
+    @Html.ActionLink("Nuevo Cliente", "Crear", null, new { @class = "btn btn-primary btn-sm", @type = "button" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Activo)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Activo)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
-                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
-            </td>
-        </tr>
-    }
+<table id="myTable" class="table table-striped" style="width:100%" >
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Nombre)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Telefono)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Direccion)
+			</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nombre)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Telefono)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Direccion)
+				</td>
+				<td>
+					@Html.ActionLink(" Editar", "Editar", new { id = item.Id }, new { @class = "btn btn-primary btn-sm glyphicon glyphicon-edit", @type = "button" })
+					@Html.ActionLink(" Detalle", "Detalle", new { id = item.Id }, new { @class = "btn btn-warning btn-sm glyphicon glyphicon-list-alt", @type = "button" })
+					@Html.ActionLink(" Eliminar", "Eliminar", new { id = item.Id }, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-trash", @type = "button" })
+				</td>
+			</tr>
+		}
+	</tbody>
 
 </table>

@@ -4,12 +4,9 @@
     ViewBag.Title = "Eliminar";
 }
 
-<h2>Eliminar</h2>
-
-<h3>&iquest;Estas seguro que quieres eliminar este producto?</h3>
-<div>
-    <h4>Producto</h4>
-    <hr />
+<h2>Productos</h2><hr />
+<div class="col-md-offset-1">
+	<h4>¿Estás seguro que quieres eliminar este producto?</h4>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Descripcion)
@@ -72,9 +69,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <div class="form-actions col-lg-offset-1" >
+            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" /> 
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default btn-sm", @type = "button" })
         </div>
     }
 </div>
