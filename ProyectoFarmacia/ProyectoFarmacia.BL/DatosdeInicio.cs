@@ -26,7 +26,7 @@ namespace ProyectoFarmacia.BL
                 
                 //Usuario Isaac Garcia 
                 var nuevoUsuario4 = new Usuario();
-                nuevoUsuario4.Nombre = "isaacg";
+                nuevoUsuario4.Nombre = "igarcia";
                 nuevoUsuario4.Contrasena = Encriptar.CodificarContrasena("123");
                 
                 //Usuario Arnol Lopez

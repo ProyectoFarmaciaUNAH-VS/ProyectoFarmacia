@@ -18,9 +18,7 @@ namespace ProyectoFarmacia.BL
             _contexto = new Contexto();
            
         }
-
-      
-
+        
         public bool Autorizar(string nombreUsuario, string contrasena)
         {
             var contrasenaEncriptada = Encriptar.CodificarContrasena(contrasena);
